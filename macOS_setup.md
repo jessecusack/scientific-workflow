@@ -37,7 +37,7 @@ All of the above software is entirely optional. Of course, it will probably take
 
 A brief explanation of some of the software:
 
-* `atom` - cool GUI text/code editor
+* [`atom`](https://atom.io/) - cool GUI text/code editor
 * `appcleaner` - very useful tool for uninstalling macOS applications
 * `mactex` - TeX/LaTeX installation
 * `r` - the R programming language
@@ -69,12 +69,23 @@ I like to install miniconda rather than the full anaconda distribution. The foll
     
 ### Step 2.1 - install the base environment
 
-The default conda environment (which is called `base`) doesn't contain any packages. For convenience I like to install code formatters, jupyter lab plus some extensions here. You could also create a new environment (perhaps called `jlab` via ) to do this, leaving `base` completely clean, but then you'll have to activate `jlab` every time. There is no right or wrong way to do this, just personal preferences. 
+The default conda environment (which is called `base`) doesn't contain any packages. For convenience I like to install code formatters, jupyter lab plus some extensions here. You could also create a new environment (perhaps called `jlab`) to do this, leaving `base` completely clean, but then you'll have to activate `jlab` every time you want to start jupyter. Ultimately, there is no right or wrong way to proceed. 
 
+    conda activate base
     conda install nodejs jupyterlab black isort jupytext jupyterlab-system-monitor
     jupyter labextension install @jupyterlab/toc
     
-The last line installs the [table of contents](https://github.com/jupyterlab/jupyterlab-toc) lab extension which makes working with long ipython notebooks AMAZING. 
+The last line installs the [table of contents](https://github.com/jupyterlab/jupyterlab-toc) lab extension which makes it a lot easier to work with big notebooks.
+
+For reference we can create a new named environment like so:
+
+    conda create -n <NAME> python=3.* <MORE PACKAGES>
+    
+replacing bracketed variables as appropriate. Delete an environment like this:
+
+    conda remove --name <NAME> --all
+    
+[More options detailed here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
     
 ## Step 3 - install matlab
 
