@@ -17,4 +17,7 @@ Importantly, I try to make my workflow well documented and extensively version c
 * [Setting up github](github_setup.md)
 * [Starting a new scientific project](scientific_projects.md)
 * [Working with HPCs](HPC_clusters.md)
-* [Resources to learn the tools discussed in the notes](learning_resources.md)
+* [Resources to learn the things in the notes](learning_resources.md)
+* Working collaboratively
+* Archiving and publishing (zenodo, DOIs)
+* Working in the field or at sea
