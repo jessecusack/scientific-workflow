@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# Entire folders
+figures/*
+data/external/*
+data/internal/*
+
+# jupyter notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# MATLAB
+*.m~
+
+# R
+.Rhistory
+.Rapp.history
+
+# Data formats
+*.nc
+*.mat
+*.bin
+
+# Figure formats
+*.jpg
+*.jpeg
+*.png
+*.tiff
+*.eps
+*.pdf
