@@ -14,6 +14,7 @@ Importantly, I try to make my workflow well documented and extensively version c
 ## Contents
 
 * [Setting up macOS](macOS_setup.md)
+* Setting up linux
 * [Setting up github](github_setup.md)
 * [Starting a new scientific project](scientific_projects.md)
 * [Working with HPCs](HPC_clusters.md)
