@@ -15,7 +15,7 @@ or recursively copy a directory with `-r`
 
     cp -r ~/projects/some_folder/data/internal/data_dir destination/
     
-or use wildcards
+or use wildcards to copy files that match a pattern
 
     cp ~/projects/some_folder/data/internal/data_dir/file_*.mat destination/
     
@@ -31,7 +31,7 @@ or
 
     ln ~/projects/some_folder/data/internal/data_dir destination/data_dir
     
-which is exactly equivalent to the original file. If the original file is moved a hard link will still work. If you delete a hard link it will not delete the original. 
+which is exactly equivalent to the original file but uses no more memory. If the original file is moved a hard link will still work. If you delete a hard link it will not delete the original. 
 
 ## Local symbolic links
 
@@ -51,7 +51,7 @@ If the original file is moved it will break the link. If the original is changed
 
 ## rsync - if you have to copy use this
 
-`rsync` is a utility that synchronises files. If a file already exists in a location and is unmodified, it will not bother transferring any data which saves time and bandwidth. 
+`rsync` is a utility that synchronises files. If a file already exists in the destination and the source is unmodified, it will not bother transferring any data which saves time and bandwidth. If a source file has changed, the destination will be updated in an efficient way. Use like:
 
     rsync ~/projects/some_folder/data/internal/dataset.nc destination/
     
@@ -65,7 +65,7 @@ or use wildcards
     
 ## Remote copy with `scp` and `rsync`
 
-If you need to copy files from a remote server via `ssh` use `scp`, e.g.
+If you need to copy files from a remote server that you normally access via `ssh`, use `scp`, e.g.
 
     scp usename@host:some_dir/dataset.nc destination/
     
@@ -117,7 +117,7 @@ Or even better synchronise!
 
     rclone sync source:sourcepath folder/on/your/computer
 
-Here is an example of a shell script that I wrote for a project. It was contained in a file called `get_vmp_pelican_2021.sh`. It allows the user to input a different drive, otherwise it uses a default. 
+Here is an example of a shell script that I wrote for a project. It was contained in a file called `get_vmp_pelican_2021.sh`. It allows the user to input a drive name, but if too much time passes, it tries a default name. 
 
     echo "Input rclone drive name:"
 
