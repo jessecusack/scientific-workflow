@@ -22,3 +22,8 @@ Importantly, I try to make my workflow well documented and extensively version c
 * Working collaboratively
 * Archiving and publishing (zenodo, DOIs)
 * Working in the field or at sea
+
+
+## Other useful things, not sure where they go yet
+
+* [Pulling data into a repository from various sources](get_snippets.md)
