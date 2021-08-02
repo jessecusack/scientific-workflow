@@ -141,7 +141,11 @@ Assuming [github was set up](github_setup.md) already,
     git init
     gh create repo
     
-will set up git and put your project on github.
+will set up git and create a repository on github. When you've accumulated the first few bits of the project (including the `/gitignore` file!) add it all like this:
+
+    git add *
+    git commit -m 'initial commit'
+    git push origin main
 
 ## Managing everything with jupyter lab
 
@@ -149,4 +153,4 @@ will set up git and put your project on github.
 
 ## Version control and jupyter notebooks
 
-Notebooks suck with version control, even though they're in a human readable data format (JSON). This is because they contain lots non-text data like figures. A very good solution is to use [`jupytext`](https://github.com/mwouts/jupytext). This little package can convert, both from and to, `.ipynb` and `.py` files. Better yet, you can pair a notebook with a `.py` file, which will be updated every time you save the notebook. After doing this, you only need to version control the `.py` file, which works beautifully. If you ever lose your notebook file, you can regenerate it using `jupytext` and rerun it to create the figures and output. 
+Notebooks suck with version control, even though they're in a human readable data format (JSON). This is because they contain lots non-text data like figures. A very good solution is to use [`jupytext`](https://github.com/mwouts/jupytext). This little package can convert, both from and to, `.ipynb` and `.py` files. Better yet, you can pair a notebook with a `.py` file, which will be updated every time you save the notebook. After doing this, you only need to version control the `.py` file, which works beautifully. If you ever lose your notebook file, you can regenerate it using `jupytext` and rerun it to create the figures and output. It even works with other languages like Julia and R!
