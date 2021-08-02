@@ -4,6 +4,13 @@ By getting, I mean download data, downloading toolboxes, linking datasets. Most 
 
 #### Contents
 
+1) [Copying, linking and synchronising both locally and remotely](#Copying,-linking-and-synchronising)
+1) [Mounting filesystems](#Mounting-filesystems)
+1) [Interacting with cloud storage](#Cloud-storage)
+1) [Downloading from the internet](#Downloading-from-the-internet)
+
+
+# Copying, linking and synchronising
 
 ## Local copy
 
@@ -79,6 +86,8 @@ Or better yet, `rsync` works remotely too:
     
 where `-v` specifies verbose output, or more information about what is going on.
 
+# Mounting filesystems
+
 ## Mounting with `sshfs`
 
 If you have very fast access to a remote machine (say on a local area network), it might be worth mounting the file system using `sshfs` and then symbolically linking to the files. Every time you access a file it will transfer data over the network. This may not be desirable if your network is slow. Usage is something like this:
@@ -98,6 +107,8 @@ This can be done graphically on macOS using finder by clicking 'Go' and then 'Co
 Unmount with
 
     umount /Volumes/folder
+    
+# Cloud storage
 
 ## Accessing cloud storage with [`rclone`](https://rclone.org/)
 
@@ -130,6 +141,8 @@ Here is an example of a shell script that I wrote for a project. It was containe
     fi
 
     rclone sync -P $drive:data/Pelican2021/data/vmp/RAW_P_file ./Pelican2021/vmp/P_files/
+    
+# Downloading from the internet
 
 ## Downloading with `wget`
 
@@ -138,7 +151,7 @@ To install the matlab Gibbs Seawater Toolbox I use:
     wget http://www.teos-10.org/software/gsw_matlab_v3_06_12.zip
     unzip gsw_matlab_v3_06_12.zip -d gsw_matlab_v3_06_12
     
-## Downloading with `git`
+## Downloading from github with `git`
 
 To install matlab BrewerMap colormaps I use:
 
