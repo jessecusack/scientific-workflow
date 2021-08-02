@@ -20,7 +20,7 @@ Make logging into the HPC as easy as possible with ssh keys. Each cluster usuall
 
 ## Setting up conda
 
-In my experiance you can usually install miniconda in your home directory. This is beneficial because you can then heavily customise and upgrade your environment to suite your needs. Some clusters have anaconda pre-install or make use of jupyter hub, which is great too, but I often find it kind of clunky (but am happy to be shown otherwise)
+In my experience you can usually install miniconda in your home directory. This is beneficial because you can then heavily customise and upgrade your environment to suite your needs. Some clusters have anaconda pre-install or make use of jupyter hub, which is great too, but I often find it kind of clunky (but am happy to be shown otherwise)
 
 Installation should follow closely [step 2 of setting up macOS](macOS_setup.md#Step-2---install-conda).
 

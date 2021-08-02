@@ -9,7 +9,7 @@ This repository is a collection of notes on my computational scientific workflow
 * work on unix machines (macOS/linux)
 * use high performance computing (HPC) clusters
 
-An important underlying goal of my workflow is that it be well documented and reproducible. Recently, scientific journals have started to require that code and data are archived and accessible prior to publication. I have found that working extensively with git and bash scripts streamlines the process of meeting journal deman
+An important underlying goal of my workflow is that it be well documented and reproducible. Recently, scientific journals have started to require that code and data are archived and accessible prior to publication. I have found that working extensively with git and bash scripts streamlines the process of meeting open-access requirements considerably. 
 
 ## Contents
 
@@ -18,7 +18,7 @@ An important underlying goal of my workflow is that it be well documented and re
 * [Setting up github](github_setup.md)
 * [Starting a new scientific project](scientific_projects.md)
 * [Working with HPCs](HPC_clusters.md)
-* [Resources to learn the things in the notes](learning_resources.md)
+* [Additional learning resources](learning_resources.md)
 * Working collaboratively
 * Archiving and publishing (zenodo, DOIs)
 * Working in the field or at sea
