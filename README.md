@@ -1,15 +1,15 @@
 # What is the purpose of this repository?
 
-This repository is a collection of notes on various aspects of the scientifc workflow and setting up computers. Perhaps more accurately, it describes my own (somewhat aspirational) work flow. As such, the notes may not be relevant to everyone, but might be useful to those who do similar things to me, such as:
+This repository is a collection of notes on my computational scientific workflow. It is constantly under refinement as I learn new things or as software tools improve (I am always happy to hear about new efficient ways of working!) The notes may not be relevant to everyone, but might be useful to those who do similar things to me, such as:
 
 * write python/matlab/R/Julia code
-* analyse environmental data (both in situ and simulated)
+* analyse environmental data (both large and small datasets derived from in situ measurements or simulated numerically)
 * work via command line interfaces
 * use version control and github
 * work on unix machines (macOS/linux)
 * use high performance computing (HPC) clusters
 
-Importantly, I try to make my workflow well documented and extensively version controlled, which I hope also makes it reproducible. This turns out to be particularly useful when publishing papers, since journals often require that code and data are archived and accesible. 
+An important underlying goal of my workflow is that it be well documented and reproducible. Recently, scientific journals have started to require that code and data are archived and accessible prior to publication. I have found that working extensively with git and bash scripts streamlines the process of meeting journal deman
 
 ## Contents
 
