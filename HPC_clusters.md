@@ -55,9 +55,9 @@ After which I hit `ctrl + b` followed immediately by `d` to disconnect from the 
     
 On my personal computer I run:
 
-    ssh -L 8897:HOSTNAME:8897 -N amarel
+    ssh -L 8897:[hostname]:8897 -N amarel
     
-where `HOSTNAME` is replaced by the output of `echo $(hostname)` from the amarel session.
+where `[hostname]` is replaced by the output of `echo $(hostname)` from the amarel session.
 
 Jupyter lab can then be accessed in a browser on my personal computer from `localhost:8897` (pop it straight into the URL bar). I highly recommend making use of jupyter lab's [workspaces](https://jupyterlab.readthedocs.io/en/stable/user/urls.html) feature to avoid a cluttered working environment if you have several projects. 
 

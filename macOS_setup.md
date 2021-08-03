@@ -75,7 +75,7 @@ The default conda environment (which is called `base`) doesn't contain any packa
     conda install jupyterlab black isort jupytext jupyterlab-system-monitor jupyterlab-spellchecker
     jupyter labextension install @jupyterlab/toc
     
-The last line installs the [table of contents](https://github.com/jupyterlab/jupyterlab-toc) lab extension which makes it __a lot__ easier to work with big notebooks.
+The last line installs the [table of contents](https://github.com/jupyterlab/jupyterlab-toc) lab extension which makes it _a lot_ easier to work with big notebooks.
 
 For reference we can create a new named environment like so:
 
