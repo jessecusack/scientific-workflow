@@ -31,7 +31,7 @@ I might have forgotten some useful stuff. Note that I don't install python this 
     
 Some software comes in the form of casks and can be install as such: (I'm not sure it is necessary to include the `--cask` option since brew is smart enough to figure out if something is a cask or a formulae)
 
-    brew install --cask atom adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-chrome google-drive r rstudio slack spotify inkscape zoom texmaker mendeley bitwarden
+    brew install --cask atom adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-chrome google-drive r rstudio slack spotify inkscape zoom texmaker mendeley bitwarden box-drive
     
 All of the above software is entirely optional. Of course, it will probably take a long time to install and use up significant bandwidth.
 

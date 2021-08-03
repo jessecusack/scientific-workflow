@@ -56,7 +56,7 @@ or
     
 If the original file is moved it will break the link. If the original is changed, the link will still work. Deleting the link does not delete the original.
 
-## rsync - if you have to copy use this
+## rsync (if you have to copy use this)
 
 `rsync` is a utility that synchronises files. If a file already exists in the destination and the source is unmodified, it will not bother transferring any data which saves time and bandwidth. If a source file has changed, the destination will be updated in an efficient way. Use like:
 
@@ -157,3 +157,5 @@ To install matlab BrewerMap colormaps I use:
 
     git clone --depth=1 --branch=master https://github.com/DrosteEffect/BrewerMap BrewerMap
     rm -rf ./BrewerMap/.git
+    
+Where the last command removes the `.git` directory, essentially destroying all the version control information. 
