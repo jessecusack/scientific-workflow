@@ -26,13 +26,40 @@ Installation should follow closely [step 2 of setting up macOS](macOS_setup.md#S
 
 ## Starting jupyter lab on a compute node
 
-Log in to the HPC
+I will demonstrate how I would start a jupyter lab session on Rutger's HPC, [Amarel](https://oarc.rutgers.edu/resources/amarel/).
+
+First, of course, log in to Amarel (not forgetting to start the university VPN first): 
+
+    ssh amarel
+    
+For the above to work, I set up an ssh key-pair with amarel and edited my local `~/.ssh/config` file appropriately. 
+
+Within Amarel, start a `tmux` session, which will stay running even if you are disconnected.
 
     tmux new -s jlab
-    <START INTERACTIVE JOB>
+    
+If `tmux` is not available, you might need to load it with `module load tmux`. Next, start an interactive session using the SLURM `srun` command.
+    
+    srun --partition=main -n 1 --mem=8G --time=08:00:00 --pty bash
+    
+Above I requested a single computer node with 8 GB of memory for 8 hours. This can obviously be adjusted to suit the need. After a moment we should be assigned a node. We need to know the `hostname` of the node we're on e.g.
+    
     echo $(hostname)
     
-Hit `ctrl + b, d` to detach from tmux. 
+Copy the result of the above command somewhere, we'll need it later. Next, start up jupyter lab, navigating to a particular project folder if necessary e.g.
+
+    cd ~/some_project
+    jupyter lab --no-browser --port=8897 --ip="$(hostname)"
+    
+After which I hit `ctrl + b` followed immediately by `d` to disconnect from the tmux session.
+    
+On my personal computer I run:
+
+    ssh -L 8897:HOSTNAME:8897 -N amarel
+    
+where `HOSTNAME` is replaced by the output of `echo $(hostname)` from the amarel session.
+
+Jupyter lab can then be accessed in a browser on my personal computer from `localhost:8897` (pop it straight into the URL bar). I highly recommend making use of jupyter lab's [workspaces](https://jupyterlab.readthedocs.io/en/stable/user/urls.html) feature to avoid a cluttered working environment if you have several projects. 
 
 ## Dask
 

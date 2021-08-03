@@ -27,4 +27,4 @@ Two important underlying goals of my workflow are that it be well documented and
 
 ## Other useful things, not sure where they go yet
 
-* [Pulling data into a repository from various sources](get_snippets.md)
+* [Code snippets for getting files](get_snippets.md)
