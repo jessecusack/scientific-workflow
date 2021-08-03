@@ -42,7 +42,7 @@ If `tmux` is not available, you might need to load it with `module load tmux`. N
     
     srun --partition=main -n 1 --mem=8G --time=08:00:00 --pty bash
     
-Above I requested a single computer node with 8 GB of memory for 8 hours. This can obviously be adjusted to suit the need. After a moment we should be assigned a node. We need to know the `hostname` of the node we're on e.g.
+Above I requested a single compute node with 8 GB of memory for 8 hours. This can obviously be adjusted to suit the need. After a moment we should be assigned a node. We need to know the `hostname` of the node we're on e.g.
     
     echo $(hostname)
     
@@ -57,7 +57,7 @@ On my personal computer I run:
 
     ssh -L 8897:[hostname]:8897 -N amarel
     
-where `[hostname]` is replaced by the output of `echo $(hostname)` from the amarel session.
+where `[hostname]` is replaced by the output of `echo $(hostname)` from the amarel session. The command establishes a connection between port 8897 on the Amarel compute node to the same port on your computer (they don't have to be the same, but it is easier to remember). 
 
 Jupyter lab can then be accessed in a browser on my personal computer from `localhost:8897` (pop it straight into the URL bar). I highly recommend making use of jupyter lab's [workspaces](https://jupyterlab.readthedocs.io/en/stable/user/urls.html) feature to avoid a cluttered working environment if you have several projects. 
 
