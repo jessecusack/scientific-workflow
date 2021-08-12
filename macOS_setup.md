@@ -89,7 +89,13 @@ replacing bracketed variables as appropriate. Delete an environment like this:
     
 ## Step 3 - install matlab
 
-Usually this involves logging into [mathworks.com](https://www.mathworks.com/), downloading the latest version, and activating. 
+Usually this involves logging into [mathworks.com](https://www.mathworks.com/), downloading the latest version, and activating.
+
+Add an alias to your `~/.zshrc` file so that you can start up matlab from the terminal without the desktop environment. I add,
+
+```
+alias matlab="matlab -nosplash -nodesktop"
+```
 
 ## Step 4 - upgrade iterm2
 
