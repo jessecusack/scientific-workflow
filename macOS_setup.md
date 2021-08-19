@@ -101,7 +101,7 @@ alias matlab="matlab -nosplash -nodesktop"
 
 I like to use `iterm2` as my terminal application because it is both straightforward and extensively modifiable. Perhaps my favourite modification is to set `ctrl + ~` to activate a terminal that drops down from the top of the screen. [Instructions here](https://blog.mestwin.net/drop-down-terminal-in-macos-with-iterm2/).
 
-### Step 4.1 - profiles and settings
+### Step 4.1 - profiles and settings across computers
 In iTerm2, you can create unique profiles for each of your working _spaces_ (e.g., local computer, server, vim). For each of these profiles, you can customize colors, specify shortcut keys to activate them, as well as starting commands (e.g., ssh _<server>_). This makes it far easier to know where you are.
 
 `iTerm2 > Preferences > Profiles`
