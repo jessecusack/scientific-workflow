@@ -7,7 +7,7 @@ How would we go about setting up a brand new apple computer for scientific work?
 1) [Install the essentials](#Step-1---install-the-essentials)
 1) [Install conda](#Step-2---install-conda)
 1) [Install matlab](#Step-3---install-matlab)
-1) [Upgrade iterm2](#Step-4---upgrade-iterm2)
+1) [Upgrade iterm2](#Step-4---customize-iterm2)
 
 ## Step 1 - install the essentials
 
