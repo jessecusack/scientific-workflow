@@ -108,7 +108,7 @@ In iTerm2, you can create unique profiles for each of your working _spaces_ (e.g
 
 If you use multiple computers (e.g., laptop and workstation), you can synch your iTerm2 setting (including profiles) by saving them in a Dropbox folder.
 
-On your main computer, go to `iTerm2 > Preferences > General > Preferences` and click `Load preferences from a custom folder or URL`. Select a Dropbox folder and save your local settings. Repeat the process on a secondary computer, but this time, do not save your local settings. After you restart iTerm2, the settings from your main computer should now be available on your secondary computer.
+On your main computer, go to `iTerm2 > Preferences > General > Preferences` and click `Load preferences from a custom folder or URL`. Select a Dropbox folder and save your local settings. Repeat the process on a secondary computer, but this time, do not save your local settings. After you restart iTerm2, the settings from your main computer should be available on your secondary computer.
 
 ### Step 4.2 - framework options
 The default shell in macOS is now zsh. [Oh my zsh](https://github.com/ohmyzsh/ohmyzsh/) makes zsh look great and provides a bunch of useful auto-complete options, especially when working with git. 
