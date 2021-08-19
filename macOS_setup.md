@@ -97,20 +97,20 @@ Add an alias to your `~/.zshrc` file so that you can start up matlab from the te
 alias matlab="matlab -nosplash -nodesktop"
 ```
 
-## Step 4 - customizing iterm2
+## Step 4 - customize iterm2
 
 I like to use `iterm2` as my terminal application because it is both straightforward and extensively modifiable. Perhaps my favourite modification is to set `ctrl + ~` to activate a terminal that drops down from the top of the screen. [Instructions here](https://blog.mestwin.net/drop-down-terminal-in-macos-with-iterm2/).
 
-### profiles and settings
-In iTerm2, you can create unique profiles for each of your working _spaces_ (e.g., local computer, server, vim). For each of these profiles, you can customize colors, specify shortcut keys to activate them, as well as starting commands (e.g., ssh <server>). This makes it far easier to know where you are.
+### Step 4.1 - profiles and settings
+In iTerm2, you can create unique profiles for each of your working _spaces_ (e.g., local computer, server, vim). For each of these profiles, you can customize colors, specify shortcut keys to activate them, as well as starting commands (e.g., ssh _<server>_). This makes it far easier to know where you are.
 
-'iTerm2 > Preferences > Profiles'
+`iTerm2 > Preferences > Profiles`
 
 If you use multiple computers (e.g., laptop and workstation), you can synch your iTerm2 setting (including profiles) by saving them in a Dropbox folder.
 
-On your main computer, go to 'iTerm2 > Preferences > General > Preferences' and click 'Load preferences from a custom folder or URL'. Select a Dropbox folder and save your local settings. Repeat the process on a secondary computer, but this time, do not save your local settings. After you restart iTerm2, the settings from your main computer should now be available on your secondary computer.
+On your main computer, go to `iTerm2 > Preferences > General > Preferences` and click `Load preferences from a custom folder or URL`. Select a Dropbox folder and save your local settings. Repeat the process on a secondary computer, but this time, do not save your local settings. After you restart iTerm2, the settings from your main computer should now be available on your secondary computer.
 
-### framework options
+### Step 4.2 - framework options
 The default shell in macOS is now zsh. [Oh my zsh](https://github.com/ohmyzsh/ohmyzsh/) makes zsh look great and provides a bunch of useful auto-complete options, especially when working with git. 
 
     sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
