@@ -2,17 +2,23 @@
 
 All HPC clusters work slightly differently, but some common elements are:
 
-* Use linux operating system
+* Use a linux type operating system
 * Usually access via a command line interface through ssh (although some GUI's do exist)
 * Separation of CPU/GPU resources (login/compute/visualise)
 * You have to schedule jobs (e.g. via slurm or PBS)
-* Separation of storage (home/work/scratch)
+* Clear separation of storage space (home/work/scratch)
 
-## Working efficiently
+## HPC etiquette and efficiency
+
+### Nodes
+
+HPC clusters usually have a login node and various types of compute nodes. The login node, as the name suggests, is the place you (and everyone else) log on to (usually via ssh). Computationally intensive tasks, really anything that requires significant memory, CPU or time, should NOT be run on the login nodes. Instead, you must request time on dedicated compute nodes using job scheduling software (e.g. [SLURM](https://slurm.schedmd.com/documentation.html)). If you're just testing things out and don't know how much time or resources you might need, start an interactive job for this purpose. 
+
+On some HPC clusters, the compute nodes do not have internet access, so interacting with github and downloading files has to be done on the login nodes. This is usually ok because it doesn't demand too many resources. 
 
 ### Storage
 
-Stuff in the home directory is usually backed up, so put code or analysis (git repositories) here and then create symbolic links to large datasets or model output which will likely be stored in a workspace or on scratch. 
+Stuff in your home directory is usually backed up, so put code or analysis (including git repositories) here and then create symbolic links to large datasets or model output which will likely be stored in a workspace (might be backed up) or on scratch (not backed up). 
 
 ### ssh keys
 
@@ -20,7 +26,7 @@ Make logging into the HPC as easy as possible with ssh keys. Each cluster usuall
 
 ## Setting up conda
 
-In my experience you can usually install miniconda in your home directory. This is beneficial because you can then heavily customise and upgrade your environment to suite your needs. Some clusters have anaconda pre-install or make use of jupyter hub, which is great too, but I often find it kind of clunky (but am happy to be shown otherwise)
+In my experience you can usually install miniconda in your home directory. This is beneficial because you can then heavily customise and upgrade your environment to suit your needs. Some clusters have anaconda pre-install or make use of jupyter hub, which is great too, but I often find it kind of clunky.
 
 Installation should follow closely [step 2 of setting up macOS](macOS_setup.md#Step-2---install-conda).
 
@@ -38,7 +44,7 @@ Within Amarel, start a `tmux` session, which will stay running even if you are d
 
     tmux new -s jlab
     
-If `tmux` is not available, you might need to load it with `module load tmux`. Next, start an interactive session using the SLURM `srun` command.
+If `tmux` is not available, you might need to load it with `module load tmux` or use `screen` instead. Next, start an interactive session using the SLURM `srun` command.
     
     srun --partition=main -n 1 --mem=8G --time=08:00:00 --pty bash
     
@@ -59,7 +65,7 @@ On my personal computer I run:
     
 where `[hostname]` is replaced by the output of `echo $(hostname)` from the amarel session. The command establishes a connection between port 8897 on the Amarel compute node to the same port on your computer (they don't have to be the same, but it is easier to remember). 
 
-Jupyter lab can then be accessed in a browser on my personal computer from `localhost:8897` (pop it straight into the URL bar). I highly recommend making use of jupyter lab's [workspaces](https://jupyterlab.readthedocs.io/en/stable/user/urls.html) feature to avoid a cluttered working environment if you have several projects. 
+Jupyter lab can then be accessed in a browser on you personal computer from `localhost:8897` (pop it straight into the URL bar). I highly recommend making use of jupyter lab's [workspaces](https://jupyterlab.readthedocs.io/en/stable/user/urls.html) feature to avoid a cluttered working environment if you have several projects. 
 
 ## Dask
 
