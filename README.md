@@ -28,3 +28,5 @@ Two important underlying goals of my workflow are that it be well documented and
 ## Other useful things, not sure where they go yet
 
 * [Code snippets for getting files](get_snippets.md)
+* Code snippets for making movies
+* Tips for exploring data, ipython widgets?
