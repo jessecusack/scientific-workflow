@@ -23,13 +23,13 @@ At this point we probably need to __install Xcode from the app store__ and then 
     
 in the terminal. (I think brew needs one or perhaps both of these steps to be completed before it will install some software...)
 
-Now use brew to install all the software we might need, in no particular order:
+Now use brew to install all the non-GUI we might need, in no particular order:
 
     brew install git gh gcc netcdf ncview wget ffmpeg rclone
     
 I might have forgotten some useful stuff. Note that I don't install python this way, instead I do that with miniconda in the next step. 
     
-Some software comes in the form of casks and can be install as such: (I'm not sure it is necessary to include the `--cask` option since brew is smart enough to figure out if something is a cask or a formulae)
+Other software I would definitely install. The `--cask` option forces brew to treat the applications as casks, but you could omit this and let it decide whether to install from a formulae or cask (often there is only one choice). 
 
     brew install --cask atom adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-chrome google-drive r rstudio slack spotify inkscape zoom texmaker mendeley bitwarden box-drive
     
@@ -59,8 +59,9 @@ I like to install miniconda rather than the full anaconda distribution. The foll
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda3/miniconda.sh
     bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
     rm -rf ~/miniconda3/miniconda.sh
-    miniconda3/bin/conda init bash
-    miniconda3/bin/conda init zsh
+    # Not sure if these are necessary...
+    # miniconda3/bin/conda init bash
+    # miniconda3/bin/conda init zsh
     
 [Conda-forge](https://conda-forge.org/) tends to contain a more complete list of packages than the default channel, so I modify the conda default:
 
@@ -74,18 +75,37 @@ The default conda environment (which is called `base`) doesn't contain any packa
     conda activate base
     conda install jupyterlab black isort jupytext jupyterlab-system-monitor jupyterlab-spellchecker
     jupyter labextension install @jupyterlab/toc
-    
+
 The last line installs the [table of contents](https://github.com/jupyterlab/jupyterlab-toc) lab extension which makes it _a lot_ easier to work with big notebooks.
 
 For reference we can create a new named environment like so:
 
-    conda create -n <NAME> python=3.* <MORE PACKAGES>
+    conda create -n [name] python=3.* [more packages]
     
 replacing bracketed variables as appropriate. Delete an environment like this:
 
-    conda remove --name <NAME> --all
+    conda remove --name [name] --all
     
 [More options detailed here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
+
+### Step 2.2 - install Julia and R kernels
+
+If you installed Julia or R via `brew install --cask` above, then you need to install the jupyter kernel for these languages.
+
+To install the R kernel, first open a terminal and run `R` to start the R console. Then run:
+
+```R
+install.packages('IRkernel') 
+IRkernel::installspec()
+```
+
+To install the Julia kernel, first open a terminal and run `julia` to start the julia console. Then hit `]` to enter the REPL and follow up with:
+
+```julia
+add IJulia
+```
+
+That _should_ be all you need to do.
     
 ## Step 3 - install matlab
 
