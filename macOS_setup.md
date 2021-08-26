@@ -25,24 +25,25 @@ in the terminal. (I think brew needs one or perhaps both of these steps to be co
 
 Now use brew to install all the non-GUI we might need, in no particular order:
 
-    brew install git gh gcc netcdf ncview wget ffmpeg rclone
+    brew install git gh gcc netcdf ncview wget ffmpeg rclone rsync curl
     
-I might have forgotten some useful stuff. Note that I don't install python this way, instead I do that with miniconda in the next step. 
+Some of these might already be on your system, but often they are out of date versions. Note that I don't install python this way, instead I do that with miniconda in the next step. 
     
-Other software I would definitely install. The `--cask` option forces brew to treat the applications as casks, but you could omit this and let it decide whether to install from a formulae or cask (often there is only one choice). 
+Other software I would install that are not command line utilities come in the form of casks. The `--cask` option forces brew to treat the applications as casks, but you could omit this and let it decide whether to install from a formulae or cask (often there is only one choice). 
 
-    brew install --cask atom adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-chrome google-drive r rstudio slack spotify inkscape zoom texmaker mendeley bitwarden box-drive
+    brew install --cask atom adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-chrome google-drive r rstudio slack spotify inkscape zoom texmaker mendeley bitwarden box-drive calibre djview
     
 All of the above software is entirely optional. Of course, it will probably take a long time to install and use up significant bandwidth.
 
 A brief explanation of some of the software:
 
-* [`atom`](https://atom.io/) - cool GUI text/code editor
+* [`atom`](https://atom.io/) - GUI text/code editor
 * `appcleaner` - very useful tool for uninstalling macOS applications
 * `mactex` - TeX/LaTeX installation
 * `r` - the R programming language
 * `caffeine` - a handy command line utility that stops your operating system from sleeping for a set amount of time
 * `bitwarden` - password manager
+* `iterm2` - terminal
 
 ### Step 1.1 - configure git
 
@@ -88,6 +89,10 @@ replacing bracketed variables as appropriate. Delete an environment like this:
     
 [More options detailed here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
+At this point I might add an alias to `~/.zshrc` for convenience, e.g.
+
+    alias jlab="jupyter lab"
+
 ### Step 2.2 - install Julia and R kernels
 
 If you installed Julia or R via `brew install --cask` above, then you need to install the jupyter kernel for these languages.
@@ -111,26 +116,27 @@ That _should_ be all you need to do.
 
 Usually this involves logging into [mathworks.com](https://www.mathworks.com/), downloading the latest version, and activating.
 
-Add an alias to your `~/.zshrc` file so that you can start up matlab from the terminal without the desktop environment. I add,
+Add an alias to your `~/.zshrc` file so that you can start up matlab from the terminal without the desktop environment. I might add,
 
 ```
-alias matlab="matlab -nosplash -nodesktop"
+alias mlab="matlab -nosplash -nodesktop"
 ```
 
 ## Step 4 - customize iterm2
 
-I like to use `iterm2` as my terminal application because it is both straightforward and extensively modifiable. Perhaps my favourite modification is to set `ctrl + ~` to activate a terminal that drops down from the top of the screen. [Instructions here](https://blog.mestwin.net/drop-down-terminal-in-macos-with-iterm2/).
+I like to use `[iterm2](https://iterm2.com/)` as my terminal application because it is both straightforward and extensively modifiable. Perhaps my favourite modification is to set `ctrl + ~` to activate a terminal that drops down from the top of the screen. [Instructions here](https://blog.mestwin.net/drop-down-terminal-in-macos-with-iterm2/).
 
 ### Step 4.1 - profiles and settings across computers
-In iTerm2, you can create unique profiles for each of your working _spaces_ (e.g., local computer, server, vim). For each of these profiles, you can customize colors, specify shortcut keys to activate them, as well as starting commands (e.g., ssh _<server>_). This makes it far easier to know where you are.
+In iTerm2, you can create unique profiles for each of your working _spaces_ (e.g., local computer, server, vim). For each of these profiles, you can customize colors, specify shortcut keys to activate them, as well as starting commands (e.g., `ssh [server]`). This makes it far easier to know where you are.
 
 `iTerm2 > Preferences > Profiles`
 
-If you use multiple computers (e.g., laptop and workstation), you can synch your iTerm2 setting (including profiles) by saving them in a Dropbox folder.
+If you use multiple computers (e.g., laptop and workstation), you can sync your iTerm2 setting (including profiles) by saving them in a Dropbox folder.
 
 On your main computer, go to `iTerm2 > Preferences > General > Preferences` and click `Load preferences from a custom folder or URL`. Select a Dropbox folder and save your local settings. Repeat the process on a secondary computer, but this time, do not save your local settings. After you restart iTerm2, the settings from your main computer should be available on your secondary computer.
 
 ### Step 4.2 - framework options
+
 The default shell in macOS is now zsh. [Oh my zsh](https://github.com/ohmyzsh/ohmyzsh/) makes zsh look great and provides a bunch of useful auto-complete options, especially when working with git. 
 
     sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
