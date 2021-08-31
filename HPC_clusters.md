@@ -34,6 +34,8 @@ Installation should follow closely [step 2 of setting up macOS](macOS_setup.md#S
 
 I will demonstrate how I would start a jupyter lab session on Rutger's HPC, [Amarel](https://oarc.rutgers.edu/resources/amarel/).
 
+(The method I have written out below has been bundled into a python package called [jupyter forward](https://github.com/NCAR/jupyter-forward))
+
 First, of course, log in to Amarel (not forgetting to start the university VPN first): 
 
     ssh amarel
