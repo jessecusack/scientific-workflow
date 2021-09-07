@@ -88,7 +88,7 @@ The conda package manager for python can use what is known as an environment fil
 │   environment.yml
 ```
 
-The `.yml` ending indicates that it is a [YAML](https://yaml.org/) file. Essentially, it is a list of all the python packages (including version numbers, if needed) that are required to run the code within the project. See [this example](#environment.example.yml) of what such a file looks like. 
+The `.yml` ending indicates that it is a [YAML](https://yaml.org/) file. Essentially, it is a list of all the python packages (including version numbers, if needed) that are required to run the code within the project. See [this example](environment.example.yml) of what such a file looks like. 
 
 The R language [also has an environment specification](https://rstudio.github.io/renv/articles/renv.html) (although I've personally never used it). Apparently it uses `renv.lock` files.
 
@@ -96,7 +96,7 @@ The R language [also has an environment specification](https://rstudio.github.io
 
 #### Data
 
-Datasets should _not be included in version control_. Version control is designed for code or text and other non-binary data. Instead, data should be archived somewhere safe and accessible (cloud storage/remote server/RAID). When working with data, we pull in only what we need using scripts (which _are_ version controlled) or by following a set of instructions in the README. Sometimes the dataset might be so large you don't want to copy it. Depending on where it is stored, it might be better to create a symbolic link. [This page](#get_snippets.md) details a variety of different methods that can be used to copy and link data from diverse sources. 
+Datasets should _not be included in version control_. Version control is designed for code or text and other non-binary data. Instead, data should be archived somewhere safe and accessible (cloud storage/remote server/RAID). When working with data, we pull in only what we need using scripts (which _are_ version controlled) or by following a set of instructions in the README. Sometimes the dataset might be so large you don't want to copy it. Depending on where it is stored, it might be better to create a symbolic link. [This page](get_snippets.md) details a variety of different methods that can be used to copy and link data from diverse sources. 
 
 ```
 └───data/
