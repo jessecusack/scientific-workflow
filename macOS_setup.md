@@ -25,13 +25,13 @@ in the terminal. (I think brew needs one or perhaps both of these steps to be co
 
 Now use brew to install all the non-GUI we might need, in no particular order:
 
-    brew install git gh gcc netcdf ncview wget ffmpeg rclone rsync curl
+    brew install git gh gcc netcdf ncview wget ffmpeg rclone rsync curl tree
     
 Some of these might already be on your system, but often they are out of date versions. Note that I don't install python this way, instead I do that with miniconda in the next step. 
     
 Other software I would install that are not command line utilities come in the form of casks. The `--cask` option forces brew to treat the applications as casks, but you could omit this and let it decide whether to install from a formulae or cask (often there is only one choice). 
 
-    brew install --cask atom adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-chrome google-drive r rstudio slack spotify inkscape zoom texmaker mendeley bitwarden box-drive calibre djview
+    brew install --cask atom adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-drive r rstudio inkscape zoom texmaker mendeley bitwarden box-drive calibre djview
     
 All of the above software is entirely optional. Of course, it will probably take a long time to install and use up significant bandwidth.
 
