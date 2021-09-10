@@ -1,6 +1,6 @@
 # Online resources
 
-I learned basic python and R programming using [Code Academy](https://www.codecademy.com/). Some of the content is free or accessible for a short time via a free trial. The user interface is extremely well done and you can start coding from inside the web browser, which is great for beginners. 
+I learned basic python and R programming using [Code Academy](https://www.codecademy.com/). Some of the content is free or accessible for a short time via a free trial. The user interface is extremely well done and you can start coding from inside the web browser, which is great for beginners. I have started learning Julia using [Julia Academy](https://juliaacademy.com/). 
 
 [Software carpentry](https://software-carpentry.org/lessons/) has open-source lessons on UNIX, R, python, git and more. 
 
