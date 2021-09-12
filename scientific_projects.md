@@ -162,7 +162,7 @@ Any matlab analysis should make copious use of the functions `addpath` and `genp
 Assuming [github was set up](github_setup.md) already,
 
     git init
-    gh create repo
+    gh repo create
     
 will set up git and create a repository on github. When you've accumulated the first few bits of the project (including the `/gitignore` file!) add it all like this:
 
