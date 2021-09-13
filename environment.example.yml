@@ -1,0 +1,21 @@
+name: my-project
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - jupytext
+  - ipykernel
+  - matplotlib
+  - cartopy
+  - cmocean
+  - numpy
+  - pandas
+  - scipy
+  - tqdm
+  - xarray
+  - netcdf4
+  - dask
+  - seawater
+  - gsw
+  - pip
