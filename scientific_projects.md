@@ -13,7 +13,7 @@ To be continued...
 
 ## Directory structure
 
-I find myself using some variation if this directory structure often (eventually I will create a [cookiecutter](https://cookiecutter.readthedocs.io) template)
+I find myself using some variation if this directory structure often. So much so, that I made it into a [cookiecutter](https://cookiecutter.readthedocs.io) template! You can [find the template here](https://github.com/jessecusack/cookiecutter-research-project).
 
 ```
 project/
