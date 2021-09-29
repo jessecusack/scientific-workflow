@@ -130,17 +130,19 @@ Or even better synchronise!
 
 Here is an example of a shell script that I wrote for a project. It was contained in a file called `get_vmp_pelican_2021.sh`. It allows the user to input a drive name, but if too much time passes, it tries a default name. 
 
-    echo "Input rclone drive name:"
+```bash
+echo "Input rclone drive name:"
 
-    read -t 10 drive
+read -t 10 drive
 
-    if [ -z "$drive" ]
-    then
-        drive=drive-GOM
-        echo "Too slow. Using default: $drive"
-    fi
+if [ -z "$drive" ]
+then
+    drive=drive-GOM
+    echo "Too slow. Using default: $drive"
+fi
 
-    rclone sync -P $drive:data/Pelican2021/data/vmp/RAW_P_file ./Pelican2021/vmp/P_files/
+rclone sync -P $drive:data/Pelican2021/data/vmp/RAW_P_file ./Pelican2021/vmp/P_files/
+```
     
 # Downloading from the internet
 
