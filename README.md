@@ -20,7 +20,7 @@ Two important underlying goals of my workflow are that it be well documented and
 * Creating simple python modules and packages
 * [Working with HPCs](HPC_clusters.md)
 * [Additional learning resources](learning_resources.md)
-* Working collaboratively
+* [Working collaboratively](collaboration.md)
 * Archiving and publishing (zenodo, DOIs)
 * Working in the field or at sea
 
