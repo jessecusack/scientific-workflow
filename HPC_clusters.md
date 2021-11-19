@@ -54,7 +54,11 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-## Starting jupyter lab on a computer node (the easy way using jupyter-forward)
+## Using jupyter lab remotely
+
+I will demonstrate how I would start a jupyter lab session on Rutger's HPC, [Amarel](https://oarc.rutgers.edu/resources/amarel/).
+
+### The easy way with `jupyter-forward`
 
 The package [jupyter forward](https://github.com/NCAR/jupyter-forward) makes starting jupyter lab on a remote machine an easy 1-command process. For this to work, you need to have 1) installed Miniconda on the HPC 2) installed jupyter lab on the HPC and 3) installed `jupyter-forward` on your own computer. 
 
@@ -63,14 +67,14 @@ The package [jupyter forward](https://github.com/NCAR/jupyter-forward) makes sta
 2. From the login terminal of the HPC run:
 
 ```bash
+conda activate base
 conda install -c conda-forge jupyterlab
 ```
-
-This will install jupyterlab to the base environment. 
 
 3. From a terminal on your own computer run:
 
 ```bash
+conda activate base
 conda install -c conda-forge jupyter-forward
 ```
 
@@ -88,9 +92,7 @@ The command does the following behind the scenes:
 
 Eventually, a browswer tab on your computer will open with your remote jupyter lab session (URL: `localhost:8898`). You may be prompted for your password (which ideally would not happen with ssh keys, but it might be a small bug with `jupyter-forward`). All the above can be done manually too, as explained below. 
 
-## Starting jupyter lab on a compute node (the manual way)
-
-I will demonstrate how I would start a jupyter lab session on Rutger's HPC, [Amarel](https://oarc.rutgers.edu/resources/amarel/).
+### The manual way
 
 First, of course, log in to Amarel (not forgetting to start the university VPN first): 
 
