@@ -12,29 +12,85 @@ All HPC clusters work slightly differently, but some common elements are:
 
 ### Nodes
 
-HPC clusters usually have a login node and various types of compute nodes. The login node, as the name suggests, is the place you (and everyone else) log on to (usually via ssh). Computationally intensive tasks, really anything that requires significant memory, CPU or time, should NOT be run on the login nodes. Instead, you must request time on dedicated compute nodes using job scheduling software (e.g. [SLURM](https://slurm.schedmd.com/documentation.html)). If you're just testing things out and don't know how much time or resources you might need, start an interactive job for this purpose. 
+HPC clusters usually have a login node and various types of compute nodes. The login node, as the name suggests, is the place you (and everyone else) log on to (usually via ssh). Do not run computationally intensive tasks, or anything that requires significant memory, on the login nodes. Instead, request time on dedicated compute nodes using job scheduling software (e.g. [SLURM](https://slurm.schedmd.com/documentation.html)). If you're just testing things out and don't know how much time or resources you might need, you can start an interactive job for this purpose. 
 
-On some HPC clusters, the compute nodes do not have internet access, so interacting with github and downloading files has to be done on the login nodes. This is usually ok because it doesn't demand too many resources. 
+On some HPC clusters, the compute nodes do not have internet access, so interacting with github and downloading files has to be done via the login nodes. This is usually ok because these tasks are not typically resource intensive. 
 
 ### Storage
 
-Stuff in your home directory is usually backed up, so put code or analysis (including git repositories) here and then create symbolic links to large datasets or model output which will likely be stored in a workspace (might be backed up) or on scratch (not backed up). 
+Data in your home directory is usually backed up, so put code, analysis (including git repositories) and important data here. Unfortunately, your home directory may be space limited and unable to accommodate large datasets. It is usually necessary to create symbolic links from your home directory to large datasets, which will likely reside in a workspace (might be backed up) or on scratch (not backed up). Ideally, everything needed to reproduce your work should be backed up and everything not backed up should be easily reproducible. 
 
 ### ssh keys
 
-Make logging into the HPC as easy as possible with ssh keys. Each cluster usually has its own set of instructions for this and it is worth following them closely. If there are no specific instructions, [these general ones usually work](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-2).
+Logging into the HPC is easiest with ssh keys. Each cluster usually has its own set of instructions for setting up ssh key access and it is worth following them closely. If there are no specific instructions, [these general ones tend to work](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-2).
 
 ## Setting up conda
 
-In my experience you can usually install miniconda in your home directory. This is beneficial because you can then heavily customise and upgrade your environment to suit your needs. Some clusters have anaconda pre-install or make use of jupyter hub, which is great too, but I often find it kind of clunky.
+In my experience you can usually install miniconda in your home directory. This is beneficial because you can then heavily customise and upgrade your environment to suit your needs. Some clusters have anaconda/miniconda pre-installed, in which case you can use that too. Others might encourage you to make use of [jupyter hub](https://jupyter.org/hub), which is great for groups with pre-planned workflows, but less great for those who might want to play around new tools and packages.
 
-Installation should follow closely [step 2 of setting up macOS](macOS_setup.md#Step-2---install-conda).
+### Installing Miniconda in your home directory
 
-## Starting jupyter lab on a compute node
+Log into the HPC cluster. To download Miniconda, run:
+
+```bash
+cd ~
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+
+To install Miniconda, run:
+
+```bash
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+
+And follow the prompts to install it in your home directory (this usually just means following the default options).
+
+As part of the installation, you may be asked for permission to modify your terminal configuration (the `.bashrc` file that lives in your home directory). This is recommended, so that every time you log into the HPC, you will have access to the `conda` commands automatically.
+
+Upon successful installation, I would recommend setting `conda-forge` as the default channel package searches. I find that it has a more complete list of packages than the standard Anaconda channel. To do so, run the following in the terminal:
+
+```bash
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+```
+
+## Starting jupyter lab on a computer node (the easy way using jupyter-forward)
+
+The package [jupyter forward](https://github.com/NCAR/jupyter-forward) makes starting jupyter lab on a remote machine an easy 1-command process. For this to work, you need to have 1) installed Miniconda on the HPC 2) installed jupyter lab on the HPC and 3) installed `jupyter-forward` on your own computer. 
+
+1. Follow the instructions above to install Miniconda on the HPC. 
+
+2. From the login terminal of the HPC run:
+
+```bash
+conda install -c conda-forge jupyterlab
+```
+
+This will install jupyterlab to the base environment. 
+
+3. From a terminal on your own computer run:
+
+```bash
+conda install -c conda-forge jupyter-forward
+```
+
+To use `jupyter-forward` to launch a remote jupyter lab session, run a command like this on your own computer (replacing username appropriately):
+
+```bash
+jupyter-forward --port=8898 --conda-env=base --launch-command="srun --partition=main --mem=8000 --time=4:00:00" [username]@amarel.rutgers.edu
+```
+
+The command does the following behind the scenes:
+* log into the HPC
+* start a SLURM job using the command you specify
+* launch jupyter lab as part of the job
+* forward the jupyter lab port to your local computer
+
+Eventually, a browswer tab on your computer will open with your remote jupyter lab session (URL: `localhost:8898`). You may be prompted for your password (which ideally would not happen with ssh keys, but it might be a small bug with `jupyter-forward`). All the above can be done manually too, as explained below. 
+
+## Starting jupyter lab on a compute node (the manual way)
 
 I will demonstrate how I would start a jupyter lab session on Rutger's HPC, [Amarel](https://oarc.rutgers.edu/resources/amarel/).
-
-(The method I have written out below has been bundled into a python package called [jupyter forward](https://github.com/NCAR/jupyter-forward))
 
 First, of course, log in to Amarel (not forgetting to start the university VPN first): 
 
