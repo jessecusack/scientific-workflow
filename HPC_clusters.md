@@ -24,7 +24,7 @@ Data in your home directory is usually backed up, so put code, analysis (includi
 
 Logging into the HPC is easiest with ssh keys. Each cluster usually has its own set of instructions for setting up ssh key access and it is worth following them closely. If there are no specific instructions, [these general ones tend to work](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-2).
 
-## Setting up conda
+## Setting up conda and jupyter lab
 
 In my experience you can usually install miniconda in your home directory. This is beneficial because you can then heavily customise and upgrade your environment to suit your needs. Some clusters have anaconda/miniconda pre-installed, in which case you can use that too. Others might encourage you to make use of [jupyter hub](https://jupyter.org/hub), which is great for groups with pre-planned workflows, but less great for those who might want to play around new tools and packages.
 
@@ -54,6 +54,25 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
+### Install jupyter lab
+
+From the login terminal of the HPC run:
+
+```bash
+conda activate base
+conda install -c conda-forge jupyterlab
+```
+
+Follow any prompts. 
+
+Next, set a server password by running:
+
+```bash
+jupyter server password
+```
+
+You need the password to access jupyter lab remotely. 
+
 ## Using jupyter lab remotely
 
 I will demonstrate how I would start a jupyter lab session on Rutger's HPC, [Amarel](https://oarc.rutgers.edu/resources/amarel/).
@@ -64,12 +83,7 @@ The package [jupyter forward](https://github.com/NCAR/jupyter-forward) makes sta
 
 1. Follow the instructions above to install Miniconda on the HPC. 
 
-2. From the login terminal of the HPC run:
-
-```bash
-conda activate base
-conda install -c conda-forge jupyterlab
-```
+2. Follow the instructions above to install jupyter lab and set a password.
 
 3. From a terminal on your own computer run:
 
@@ -84,13 +98,15 @@ To use `jupyter-forward` to launch a remote jupyter lab session, run a command l
 jupyter-forward --port=8898 --conda-env=base --launch-command="srun --partition=main --mem=8000 --time=4:00:00" [username]@amarel.rutgers.edu
 ```
 
+You may be prompted for your Amarel password (which ideally would not happen with ssh keys, but it might be a small bug with `jupyter-forward`)
+
 The command does the following behind the scenes:
 * log into the HPC
 * start a SLURM job using the command you specify
 * launch jupyter lab as part of the job
 * forward the jupyter lab port to your local computer
 
-Eventually, a browswer tab on your computer will open with your remote jupyter lab session (URL: `localhost:8898`). You may be prompted for your password (which ideally would not happen with ssh keys, but it might be a small bug with `jupyter-forward`). All the above can be done manually too, as explained below. 
+Eventually, a browswer tab on your computer will open with your remote jupyter lab session (URL: `localhost:8898`). You may be prompted for your jupyter server password. All the above can be done manually too, as explained below. 
 
 ### The manual way
 
