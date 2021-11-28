@@ -26,7 +26,7 @@ Logging into the HPC is easiest with ssh keys. Each cluster usually has its own 
 
 ## Setting up conda and jupyter lab
 
-In my experience you can usually install miniconda in your home directory. This is beneficial because you can then heavily customise and upgrade your environment to suit your needs. Some clusters have anaconda/miniconda pre-installed, in which case you can use that too. Others might encourage you to make use of [jupyter hub](https://jupyter.org/hub), which is great for groups with pre-planned workflows, but less great for those who might want to play around new tools and packages.
+In my experience you can usually install miniconda in your home directory (so long at least 10 GB of storage). This is beneficial because you can then heavily customise and upgrade your environment to suit your needs. Some clusters have anaconda/miniconda pre-installed, in which case you can use that too. Others might encourage you to make use of [jupyter hub](https://jupyter.org/hub), which is great for groups with pre-planned workflows, but less great for those who might want to play around new tools and packages.
 
 ### Installing Miniconda in your home directory
 
@@ -65,13 +65,13 @@ conda install -c conda-forge jupyterlab
 
 Follow any prompts. 
 
-Next, set a server password by running:
+It is good practise to set a server password. You'll then use it to access the remote session. It can be relatively simple because most of your security comes from the use of SSH. 
 
 ```bash
 jupyter server password
 ```
 
-You need the password to access jupyter lab remotely. 
+Don't forget to store it somewhere! (like a password manager)
 
 ## Using jupyter lab remotely
 
