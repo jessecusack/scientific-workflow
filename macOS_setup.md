@@ -25,7 +25,7 @@ in the terminal. (I think brew needs one or perhaps both of these steps to be co
 
 Now use brew to install all the non-GUI we might need, in no particular order:
 
-    brew install git gh gcc netcdf ncview wget ffmpeg rclone rsync curl tree
+    brew install git gh gcc netcdf ncview wget ffmpeg rclone rsync tree
     
 Some of these might already be on your system, but often they are out of date versions. Note that I don't install python this way, instead I do that with miniconda in the next step. 
     
