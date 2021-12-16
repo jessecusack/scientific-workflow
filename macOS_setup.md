@@ -57,7 +57,8 @@ The most basic git configuration is to set a name and email.
 I like to install miniconda rather than the full anaconda distribution. The following should work:
 
     mkdir -p ~/miniconda3
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda3/miniconda.sh
+    # Note the link below is for the new M1 processor Macs, for intel use https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -O ~/miniconda3/miniconda.sh
     bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
     rm -rf ~/miniconda3/miniconda.sh
     ~/miniconda3/bin/conda init zsh
