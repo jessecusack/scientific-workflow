@@ -60,9 +60,7 @@ I like to install miniconda rather than the full anaconda distribution. The foll
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda3/miniconda.sh
     bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
     rm -rf ~/miniconda3/miniconda.sh
-    # Not sure if these are necessary...
-    # miniconda3/bin/conda init bash
-    # miniconda3/bin/conda init zsh
+    ~/miniconda3/bin/conda init zsh
     
 [Conda-forge](https://conda-forge.org/) tends to contain a more complete list of packages than the default channel, so I modify the conda default:
 
