@@ -91,8 +91,23 @@ replacing bracketed variables as appropriate. Delete an environment like this:
 At this point I might add an alias to `~/.zshrc` for convenience, e.g.
 
     alias jlab="jupyter lab"
+    
+### Step 2.2 - create global jupytext config
 
-### Step 2.2 - install Julia and R kernels
+To store global jupytext configuration, create the following file:
+
+```bash
+mkdir -p ~/.config/jupytext
+vim ~/.config/jupytext/jupytext.yml
+```
+
+And insert the following to remove jupytext version number metadata. 
+
+```
+notebook_metadata_filter: -jupytext.text_representation.jupytext_version
+```
+
+### Step 2.3 - install Julia and R kernels
 
 If you installed Julia or R via `brew install --cask` above, then you need to install the jupyter kernel for these languages.
 
