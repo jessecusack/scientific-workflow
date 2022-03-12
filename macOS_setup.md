@@ -94,17 +94,11 @@ At this point I might add an alias to `~/.zshrc` for convenience, e.g.
     
 ### Step 2.2 - create global jupytext config
 
-To store global jupytext configuration, create the following file:
+To set global jupytext configuration that will ignore jupytext version number metadata, create the following file:
 
 ```bash
 mkdir -p ~/.config/jupytext
-vim ~/.config/jupytext/jupytext.yml
-```
-
-And insert the following to remove jupytext version number metadata. 
-
-```
-notebook_metadata_filter: -jupytext.text_representation.jupytext_version
+echo "notebook_metadata_filter: -jupytext.text_representation.jupytext_version" > ~/.config/jupytext/jupytext.yml
 ```
 
 ### Step 2.3 - install Julia and R kernels
