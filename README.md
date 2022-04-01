@@ -13,7 +13,7 @@ A collection of notes on my research workflow in physical oceanography.
 * [Additional learning resources](learning_resources.md)
 * [Working collaboratively](collaboration.md)
 * Archiving and publishing (zenodo, DOIs)
-* Working at sea
+* [Working at sea](sea.md)
 
 *Other bits and bobs:*
 
