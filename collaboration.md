@@ -1,12 +1,10 @@
 # Working collaboratively 
 
-Collaboration can involve some or all of the following:
+Collaborations happen with different intensities from low level email exchanges, meetings and discussions, to exchanges of code and data up to furiously working on the same paper/proposal/code/data with several people simultaneously.
 
-* email exchanges, meetings and discussions
-* exchange of code and/or data
-* several people working on the same paper/proposal/code/data (perhaps even at the same time)
+For papers and proposals there are [Overleaf](overleaf.com) and Google Docs. 
 
-For papers and proposals there are [Overleaf](overleaf.com) and Google Docs. If you are sharing or collaborating on code or data, it helps if this is done efficiently, since everyone in academia is busy. To this end I created [a few examples](https://github.com/jessecusack/sharing-code) of good and bad practice when sharing code, in the form of an interactive lesson. The good example makes extensive use of `git` and github, which I think are essential tools that every scientist should learn.
+Collaborating on code or data needs to be done efficiently, since everyone in academia is busy. For code, there is [github](github.com). I created [a few examples](https://github.com/jessecusack/sharing-code) of good and bad practice when sharing code, in the form of an interactive lesson. The good example makes extensive use of `git` and github, which I think are essential tools that every scientist should learn.
 
 Good Practice:
 
