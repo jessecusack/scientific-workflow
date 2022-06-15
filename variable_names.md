@@ -5,7 +5,7 @@ Long forms of names such as `potential_temperature` are always understandable bu
 
 | Variable  | Short name | Notes |
 |---|---|---|
-| Time     | `time`, `datenum` | Use `datenum` in the case that it really is a MATLAB datenum. _Please_ don't use `t`.
+| Time     | `time`, `datenum` | Use `datenum` in the case that it really is a MATLAB datenum. _Please_ don't use `t` which is easily confused for temperature.
 | Latitude | `lat` |
 | Longitude| `lon` |
 | Depth | `d`, `depth` | In the ocean _this should be a positive number_.
