@@ -36,3 +36,11 @@ Long forms of names such as `potential_temperature` are always understandable bu
 | Turbidity | `turb` |
 | Kinetic energy | `KE`, `Ek`, `E_k` |
 | Potential energy | `PE`, `Ep`, `E_p` |
+
+# Confusing things to avoid
+
+The most common confusing coding practises that should be avoided, according to me:
+* **depth is not pressure**: Pressure [dbar] should never simply called or replaced by depth [m] (except for the quickest, dirtiest calculations). There is a difference between these quantities which can be larger than 1 % in the deep ocean (so, over 40 m at a pressure of 4000 dbar). This matters.
+* **depth is not height**: Depth increases downwards so is positive in the ocean. Height decreases downwards and should be negative.
+* **temp**: `temp` is so often used to mean 'temporary variable', it should not be used for temperature. 
+* **time**: `t` and `T` are so frequently used for things like temperature or period that they should not be used for time. Just use `time`. 
