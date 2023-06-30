@@ -18,6 +18,7 @@ A collection of notes on my research workflow in physical oceanography.
 *Other bits and bobs:*
 
 * [Code snippets for getting files](get_snippets.md)
+* [Useful base code](bash_snippets.md)
 * Code snippets for making movies
 * Tips for exploring data, ipython widgets?
 
@@ -28,7 +29,7 @@ This repository is a collection of notes on my computational scientific workflow
 * write code in python/matlab/R/Julia
 * analyse environmental data (both large and small datasets derived from in situ measurements or simulated numerically)
 * use high performance computing (HPC) clusters
-* work on unix machines (macOS/linux)
+* work on unix-like machines (macOS/linux)
 
 Two important underlying goals of my workflow are that it be well documented, easily repeatable and easily shared. To achieve this I made extensive use of tools such as:
 
