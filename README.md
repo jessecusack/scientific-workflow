@@ -18,7 +18,7 @@ A collection of notes on my research workflow in physical oceanography.
 *Other bits and bobs:*
 
 * [Code snippets for getting files](get_snippets.md)
-* [Useful base code](bash_snippets.md)
+* [Useful bash code](bash_snippets.md)
 * Code snippets for making movies
 * Tips for exploring data, ipython widgets?
 
