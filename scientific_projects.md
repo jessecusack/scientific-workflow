@@ -1,8 +1,8 @@
-# Starting a scientific project
+# Scientific projects
 
-To me, a scientific project is a collection of data, code, and documentation that are all connected by a relatively narrow line of scientific investigation (or set of questions) in a well defined folder structure. Sometimes a project is very clearly defined, with well understood sources of data and logical flow of analysis to answer specific questions. Other times it can be a fuzzy blob of stuff, where data comes from many different (perhaps confused) sources and analysis draws on many different methods and tools in a confusing maze of pipelines to investigate several complex/interrelated questions. Sometimes I find projects start as the former and end up as the latter, in which case they may need to be split up. The goal when starting a scientific project, is to create a framework that avoids fuzzy blobs and that can also be easily reused or repeated by someone else, PARTICULARLY YOU IN THE FUTURE!
+The process of scientific investigation doesn't always fit neatly into the directory structure of a computer. Sometimes a scientific project involes well understood sources of data and a logical flow of analysis to answer specific questions. Other times, it involves data from many different (perhaps poorly documented) sources and analysis that draws on different methods and tools in a maze of pipelines to investigate complex and interrelated questions. Sometimes I find projects start as the former and end up as the latter. Sometimes it is possible to extract the former from the latter. In any case, it is helpful create a framework (essentially a system of directories/files/notes) that reduces confusion and that is easily reused and rerun, PARTICULARLY BY YOU IN THE FUTURE!
 
-To achieve a repeatable scientific project I make use of:
+To achieve a repeatable framework for scientific investigation I make use of:
 * *git* and *github.com* for version control and backup.
 * *scripts* or a set of *instructions* to download and link external data so everybody knows where it comes from.
 * *environment specifications* for python, R or Julia and a separate matlab toolbox directory so that everybody knows exactly which packages are required to run the project
