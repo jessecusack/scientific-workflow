@@ -31,21 +31,22 @@ Some of these might already be on your system, but often they are out of date ve
     
 Other software I would install that are not command line utilities come in the form of casks. The `--cask` option forces brew to treat the applications as casks, but you could omit this and let it decide whether to install from a formulae or cask (often there is only one choice). 
 
-    brew install --cask atom adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-drive r rstudio inkscape zoom texmaker mendeley zotero bitwarden box-drive calibre djview
+    brew install --cask adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-drive r rstudio inkscape zoom texmaker zotero bitwarden box-drive calibre djview
     
 All of the above software is entirely optional. Of course, it will probably take a long time to install and use up significant bandwidth.
 
 An explanation of some of the software:
 
-* [`atom`](https://atom.io/) - GUI text/code editor
 * `appcleaner` - very useful tool for uninstalling macOS applications
-* `mactex` - TeX/LaTeX installation
+* `mactex` - TeX/LaTeX installation, which needs to be coupled with a tex editor like `texmaker`
 * `r` - the R programming language
 * `caffeine` - a handy command line utility that stops your operating system from sleeping for a set amount of time
 * `bitwarden` - password manager
 * `iterm2` - terminal
 * `gimp` - image editor
 * `inkscape` - vector graphics editor
+* `zotero` - my current favourite reference manager (which needs to be coupled with the better bibtex extension)
+* `calibre` - an ebook manager
 
 ### Step 1.1 - configure git
 
@@ -56,7 +57,7 @@ The most basic git configuration is to set a name and email.
 
 ## Step 2 - install conda
 
-I like to install miniconda rather than the full anaconda distribution. The following should work:
+I like to install miniconda rather than the full anaconda distribution. The following lines should automate the process:
 
     mkdir -p ~/miniconda3
     # Note the link below is for the new M1 processor Macs, for intel use https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
@@ -65,7 +66,7 @@ I like to install miniconda rather than the full anaconda distribution. The foll
     rm -rf ~/miniconda3/miniconda.sh
     ~/miniconda3/bin/conda init zsh
     
-[Conda-forge](https://conda-forge.org/) tends to contain a more complete list of packages than the default channel, so I modify the conda default:
+[Conda-forge](https://conda-forge.org/) often contains a more complete list of useful scientific packages than the default channel, so I modify the conda default:
 
     conda config --add channels conda-forge
     conda config --set channel_priority strict
@@ -76,7 +77,6 @@ The default conda environment (which is called `base`) doesn't contain any packa
 
     conda activate base
     conda install jupyterlab black isort cookiecutter jupyter-forward jupytext jupyterlab-system-monitor jupyterlab-spellchecker jupyterlab-git
-    jupyter labextension install @jupyterlab/toc
 
 The last line installs the [table of contents](https://github.com/jupyterlab/jupyterlab-toc) lab extension which makes it _a lot_ easier to work with big notebooks.
 
