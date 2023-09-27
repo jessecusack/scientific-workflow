@@ -4,12 +4,12 @@ How would we go about setting up a brand new apple computer for scientific work?
 
 ### Contents
 
-1) [Install the essentials](#Step-1---install-the-essentials)
+1) [Install essential software](#Step-1---install-essentials-software)
 1) [Install conda](#Step-2---install-conda)
 1) [Install matlab](#Step-3---install-matlab)
 1) [Upgrade iterm2](#Step-4---customize-iterm2)
 
-## Step 1 - install the essentials
+## Step 1 - install essential software
 
 The following assumes we made it through the most basic setup like starting the wifi, logging in with an apple ID, and turning Siri off. 
 
@@ -31,13 +31,14 @@ Some of these might already be on your system, but often they are out of date ve
     
 Other software I would install that are not command line utilities come in the form of casks. The `--cask` option forces brew to treat the applications as casks, but you could omit this and let it decide whether to install from a formulae or cask (often there is only one choice). 
 
-    brew install --cask adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-drive r rstudio inkscape zoom texmaker zotero bitwarden box-drive calibre djview
+    brew install --cask visual-studio-code adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-drive r rstudio inkscape zoom texmaker zotero bitwarden box-drive calibre djview
     
 All of the above software is entirely optional. Of course, it will probably take a long time to install and use up significant bandwidth.
 
 An explanation of some of the software:
 
-* `appcleaner` - very useful tool for uninstalling macOS applications
+* `visual-studio-code` - a good code editor
+* `appcleaner` - handy tool for uninstalling macOS applications
 * `mactex` - TeX/LaTeX installation, which needs to be coupled with a tex editor like `texmaker`
 * `r` - the R programming language
 * `caffeine` - a handy command line utility that stops your operating system from sleeping for a set amount of time
@@ -45,10 +46,14 @@ An explanation of some of the software:
 * `iterm2` - terminal
 * `gimp` - image editor
 * `inkscape` - vector graphics editor
-* `zotero` - my current favourite reference manager (which needs to be coupled with the better bibtex extension)
+* `zotero` - my current favourite reference manager (which needs to be coupled with the [better bibtex extension](https://retorque.re/zotero-better-bibtex/))
 * `calibre` - an ebook manager
 
-### Step 1.1 - configure git
+### Step 1.1 - energize your command line with "oh my zsh"
+
+This amusingly named configuration of your shell adds very useful features like auto-completion. Follow the instructions at https://ohmyz.sh/ to install.
+
+### Step 1.2 - configure git
 
 The most basic git configuration is to set a name and email.
 
