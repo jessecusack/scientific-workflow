@@ -16,20 +16,32 @@ The following assumes we made it through the most basic setup like starting the 
 First, open a terminal and install the package manager [homebrew](https://brew.sh/).
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    
-At this point we probably need to __install Xcode from the app store__ and then run,
+
+Homebrew can be used to install the majority of the software that is needed for science. You _could_ install all the software mentioned below manually, but it would be incredibly tedious and error prone. 
+Occasionally, software on homebrew needs Apples developer toolkit to work (Xcode), so next we [__install Xcode from the app store__](https://apps.apple.com/us/app/xcode/id497799835?mt=12) and run,
 
     xcode-select --install
     
-in the terminal. (I think brew needs one or perhaps both of these steps to be completed before it will install some software...)
+in the terminal. 
 
-Now use brew to install all the non-GUI we might need, in no particular order:
+Now use brew to install all the command line tools we might need, in no particular order:
 
     brew install git gh gcc netcdf ncview wget ffmpeg rclone rsync tree java neovim
-    
+
+An explanation of some of these tools:
+
+* `git` - a version control system
+* `gh` - a command line interface to GitHub.com
+* `gcc` - the GNU compiler collection
+* `ncview` - a super simple netCDF file viewer
+* `wget` - a utility for downloading things from the internet
+* `ffmpeg` - an audio and video converter
+* `rclone` - a tool for connecting to cloud storage like Dropbox and Google Drive
+* `neovim` - a modern version of the classic terminal text editor [`vim`](https://www.vim.org/)
+
 Some of these might already be on your system, but often they are out of date versions. Note that I don't install python this way, instead I do that with miniconda in the next step. 
     
-Other software I would install that are not command line utilities come in the form of casks. The `--cask` option forces brew to treat the applications as casks, but you could omit this and let it decide whether to install from a formulae or cask (often there is only one choice). 
+Homebrew can be used to install almost any software, including graphical user interface (GUI) software like the browser firefox, as well as other packages. To do so, we need to use the `--cask` option.
 
     brew install --cask visual-studio-code adobe-acrobat-reader appcleaner caffeine firefox vlc julia mactex iterm2 dropbox gimp google-drive r rstudio inkscape zoom texmaker zotero bitwarden box-drive calibre djview
     
@@ -48,6 +60,7 @@ An explanation of some of the software:
 * `inkscape` - vector graphics editor
 * `zotero` - my current favourite reference manager (which needs to be coupled with the [better bibtex extension](https://retorque.re/zotero-better-bibtex/))
 * `calibre` - an ebook manager
+* `djview` - for opening djv files, which are similar to pdf's 
 
 ### Step 1.1 - energize your command line with "oh my zsh"
 
