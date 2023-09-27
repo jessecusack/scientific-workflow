@@ -95,12 +95,10 @@ I like to install miniconda rather than the full anaconda distribution. The foll
     
 ### Step 2.1 - fill your base environment with packages
 
-When using miniconda, the default conda environment (which is called `base`) doesn't contain any packages. For convenience I like to install code formatters, jupyter lab plus some extensions here. You could also create a new environment (perhaps called `jlab`) to do this, leaving `base` completely clean, but then you'll have to activate `jlab` every time you want to start jupyter. Ultimately, there is no right or wrong way to proceed. 
+When using miniconda, the default conda environment (which is called `base`) doesn't contain any packages. For convenience I like to install code style formatters and [jupyter lab](https://jupyter.org/) with some extensions into `base`. You could also create a new environment (perhaps called `jlab`) to do this, leaving `base` completely clean, but then you'll have to activate `jlab` every time you want to start jupyter. Ultimately, there is no right or wrong way to proceed. I do:
 
     conda activate base
     conda install jupyterlab black isort cookiecutter jupyter-forward jupytext jupyterlab-system-monitor jupyterlab-spellchecker jupyterlab-git
-
-The last line installs the [table of contents](https://github.com/jupyterlab/jupyterlab-toc) lab extension which makes it _a lot_ easier to work with big notebooks.
 
 For reference we can create a new named environment like so:
 
