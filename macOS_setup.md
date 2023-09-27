@@ -64,7 +64,11 @@ An explanation of some of the software:
 
 ### Step 1.1 - energize your command line with "oh my zsh"
 
-This amusingly named configuration of your shell adds very useful features like auto-completion. Follow the instructions at https://ohmyz.sh/ to install.
+This amusingly named configuration of your shell adds very useful features like auto-completion. Find out more at https://ohmyz.sh/. Install using:
+
+    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    
+If you use bash rather than zsh, there is also [oh my bash](https://github.com/ohmybash/oh-my-bash):
 
 ### Step 1.2 - configure git
 
@@ -89,9 +93,9 @@ I like to install miniconda rather than the full anaconda distribution. The foll
     conda config --add channels conda-forge
     conda config --set channel_priority strict
     
-### Step 2.1 - install the base environment
+### Step 2.1 - fill your base environment with packages
 
-The default conda environment (which is called `base`) doesn't contain any packages. For convenience I like to install code formatters, jupyter lab plus some extensions here. You could also create a new environment (perhaps called `jlab`) to do this, leaving `base` completely clean, but then you'll have to activate `jlab` every time you want to start jupyter. Ultimately, there is no right or wrong way to proceed. 
+When using miniconda, the default conda environment (which is called `base`) doesn't contain any packages. For convenience I like to install code formatters, jupyter lab plus some extensions here. You could also create a new environment (perhaps called `jlab`) to do this, leaving `base` completely clean, but then you'll have to activate `jlab` every time you want to start jupyter. Ultimately, there is no right or wrong way to proceed. 
 
     conda activate base
     conda install jupyterlab black isort cookiecutter jupyter-forward jupytext jupyterlab-system-monitor jupyterlab-spellchecker jupyterlab-git
@@ -150,9 +154,9 @@ Add an alias to your `~/.zshrc` file so that you can start up matlab from the te
 alias mlab="matlab -nosplash -nodesktop"
 ```
 
-## Step 4 - customize iterm2
+## Step 4 - customize iTerm2
 
-I like to use [iterm2](https://iterm2.com/) as my terminal application because it is both straightforward and extensively modifiable. Perhaps my favourite modification is to set `ctrl + ~` to activate a terminal that drops down from the top of the screen. [Instructions here](https://blog.mestwin.net/drop-down-terminal-in-macos-with-iterm2/).
+I like to use [iTerm2](https://iterm2.com/) as my terminal application because it is both straightforward and extensively modifiable. Perhaps my favourite modification is to set `ctrl + ~` to activate a terminal that drops down from the top of the screen. [Instructions here](https://blog.mestwin.net/drop-down-terminal-in-macos-with-iterm2/).
 
 ### Step 4.1 - profiles and settings across computers
 In iTerm2, you can create unique profiles for each of your working _spaces_ (e.g., local computer, server, vim). For each of these profiles, you can customize colors, specify shortcut keys to activate them, as well as starting commands (e.g., `ssh [server]`). This makes it far easier to know where you are.
@@ -162,14 +166,3 @@ In iTerm2, you can create unique profiles for each of your working _spaces_ (e.g
 If you use multiple computers (e.g., laptop and workstation), you can sync your iTerm2 setting (including profiles) by saving them in a Dropbox folder.
 
 On your main computer, go to `iTerm2 > Preferences > General > Preferences` and click `Load preferences from a custom folder or URL`. Select a Dropbox folder and save your local settings. Repeat the process on a secondary computer, but this time, do not save your local settings. After you restart iTerm2, the settings from your main computer should be available on your secondary computer.
-
-### Step 4.2 - framework options
-
-The default shell in macOS is now zsh. [Oh my zsh](https://github.com/ohmyzsh/ohmyzsh/) makes zsh look great and provides a bunch of useful auto-complete options, especially when working with git. 
-
-    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    
-If you use bash rather than zsh, there is also [oh my bash](https://github.com/ohmybash/oh-my-bash):
-
-    bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
-    
