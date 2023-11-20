@@ -79,19 +79,11 @@ The most basic git configuration is to set a name and email.
 
 ## Step 2 - install conda
 
-I like to install miniconda rather than the full anaconda distribution. The following lines should automate the process:
-
-    mkdir -p ~/miniconda3
-    # Note the link below is for the new M1 processor Macs, for intel use https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -O ~/miniconda3/miniconda.sh
-    bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-    rm -rf ~/miniconda3/miniconda.sh
-    ~/miniconda3/bin/conda init zsh
+I like to [install miniforge](https://github.com/conda-forge/miniforge#install)
     
-[Conda-forge](https://conda-forge.org/) often contains a more complete list of useful scientific packages than the default channel, so I modify the conda default:
+I also like to stop conda from automatically activating base in every new terminal.
 
-    conda config --add channels conda-forge
-    conda config --set channel_priority strict
+    conda config --set auto_activate_base false
     
 ### Step 2.1 - fill your base environment with packages
 
