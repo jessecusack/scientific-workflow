@@ -1,5 +1,7 @@
 # Scientific Workflow
 
+I have moved my workflow notes onto a wiki and these are no longer updated. While some parts may still be useful, a lot of these notes are already out of date (as of August 2025). 
+
 A collection of notes on my research workflow in physical oceanography. 
 
 ## Contents
